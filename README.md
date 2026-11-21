@@ -19,6 +19,15 @@ Open `index.html` in a browser, click any text to edit it, then use **Export PDF
 
 ## النشر / Deployment
 
-موقع ثابت (Static site) مناسب لـ Cloudflare Pages أو GitHub Pages. لا يتطلب أي بناء (no build step).
+- GitHub: https://github.com/alyaabkar57-create/khalid-abdullah-cv
+- Cloudflare Pages: https://khalid-abdullah-cv.pages.dev
 
-Static site suitable for Cloudflare Pages or GitHub Pages. No build step required.
+لإعادة النشر بعد تعديل `index.html`، انسخ الملفات إلى `dist/` ثم شغّل:
+
+To redeploy after editing `index.html`, copy files into `dist/` then run:
+
+```bash
+npx wrangler pages deploy dist --project-name khalid-abdullah-cv --branch main
+```
+
+موقع ثابت (Static site) لا يتطلب أي بناء (no build step).

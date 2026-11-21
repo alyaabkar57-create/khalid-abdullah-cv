@@ -1,0 +1,5 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "khalid-abdullah-cv",
+  "pages_build_output_dir": "dist"
+}
