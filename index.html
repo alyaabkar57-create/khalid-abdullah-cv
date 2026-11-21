@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<!-- SAMPLE FICTIONAL CV — All names, companies, dates, contact details and achievements below are illustrative demo data only. -->
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>خالد عبدالله | سيرة ذاتية مهنية — Khalid Abdullah | Professional CV</title>
+<meta name="description" content="Sample professional CV for Khalid Abdullah — Business Administration &amp; Marketing Specialist. سيرة ذاتية تجريبية لخالد عبدالله.">
+<style>
+  :root{
+    --navy:#102C49;
+    --navy-2:#173B60;
+    --gold:#B4913E;
+    --gold-soft:#DCC58D;
+    --ink:#1E2A36;
+    --muted:#5D6874;
+    --line:#D9DFE6;
+    --wash:#F5F7F9;
+  }
+
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+
+  body{
+    background:#E8ECF1;
+    color:var(--ink);
+    font-family:"Cairo","Segoe UI",Tahoma,Arial,sans-serif;
+    font-size:9pt;
+    line-height:1.45;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+
+  /* ---------- Screen toolbar (hidden in print) ---------- */
+  .toolbar{
+    position:sticky;
+    top:0;
+    z-index:20;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:8px;
+    padding:10px 18px;
+    background:var(--navy);
+    color:#fff;
+    box-shadow:0 2px 12px rgba(16,44,73,.22);
+  }
+  .toolbar .brand{
+    font-weight:700;
+    font-size:11pt;
+    letter-spacing:.2px;
+    margin-inline-end:6px;
+  }
+  .toolbar .brand span{ color:var(--gold-soft); font-weight:500; font-size:9pt; }
+  .toolbar button{
+    font:inherit;
+    font-size:9pt;
+    padding:6px 12px;
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:5px;
+    background:transparent;
+    color:#fff;
+    cursor:pointer;
+    transition:background .15s,border-color .15s;
+  }
+  .toolbar button:hover{ background:rgba(255,255,255,.12); }
+  .toolbar button[aria-pressed="true"]{
+    background:var(--gold);
+    border-color:var(--gold);
+    color:#14243A;
+    font-weight:700;
+  }
+  .toolbar button.primary{
+    background:var(--gold);
+    border-color:var(--gold);
+    color:#14243A;
+    font-weight:700;
+    margin-inline-start:auto;
+  }
+  .toolbar button.primary:hover{ background:#C9A64B; }
+  .toolbar .status{ font-size:8.5pt; color:#CFD9E4; min-width:90px; }
+
+  /* ---------- Page ---------- */
+  .page{
+    width:210mm;
+    min-height:297mm;
+    margin:22px auto 34px;
+    background:#fff;
+    box-shadow:0 8px 30px rgba(16,44,73,.16);
+    break-after:page;
+    page-break-after:always;
+  }
+  .page.last-visible{ break-after:auto; page-break-after:auto; }
+
+  body[data-view="ar"] .page--en,
+  body[data-view="en"] .page--ar{ display:none; }
+
+  .masthead{
+    position:relative;
+    background:linear-gradient(125deg,var(--navy) 0%,var(--navy-2) 100%);
+    color:#fff;
+    padding:8mm 16mm 6mm;
+    overflow:hidden;
+  }
+  .masthead::before{
+    content:"";
+    position:absolute;
+    inset-inline-end:-24mm;
+    top:-28mm;
+    width:80mm;
+    height:80mm;
+    border:1px solid rgba(220,197,141,.18);
+    border-radius:50%;
+  }
+  .masthead::after{
+    content:"";
+    position:absolute;
+    inset-inline-start:0;
+    inset-inline-end:0;
+    bottom:0;
+    height:3px;
+    background:linear-gradient(90deg,var(--gold),#EBD9A8,var(--gold));
+  }
+  .kicker{
+    font-size:8pt;
+    font-weight:700;
+    letter-spacing:1.4px;
+    text-transform:uppercase;
+    color:var(--gold-soft);
+    margin-bottom:2mm;
+  }
+  .name{
+    font-size:23pt;
+    line-height:1.15;
+    font-weight:700;
+    margin:0;
+    letter-spacing:.3px;
+  }
+  .name-alt{
+    color:#E6D8B4;
+    font-family:"Segoe UI",Arial,sans-serif;
+    font-size:9.5pt;
+    letter-spacing:1px;
+    margin-top:.3mm;
+  }
+  .role{
+    margin-top:2.5mm;
+    font-size:10.5pt;
+    font-weight:600;
+    color:#F3F6F9;
+  }
+  .role-en{
+    font-family:"Segoe UI",Arial,sans-serif;
+    font-size:8.5pt;
+    font-weight:400;
+    color:#CBD7E3;
+    letter-spacing:.3px;
+  }
+  .contact{
+    display:flex;
+    flex-wrap:wrap;
+    column-gap:6mm;
+    row-gap:1mm;
+    margin-top:3mm;
+    padding-top:2.5mm;
+    border-top:1px solid rgba(255,255,255,.18);
+    font-size:8.5pt;
+  }
+  .contact-item{ display:inline-flex; gap:2mm; align-items:baseline; }
+  .contact-label{ color:var(--gold-soft); font-weight:600; }
+  .contact-value{ color:#EFF3F7; }
+
+  .body{ padding:5mm 16mm 5mm; }
+
+  .section{ margin-top:2.5mm; break-inside:avoid; }
+  .section:first-child{ margin-top:0; }
+  .section h2{
+    position:relative;
+    margin:0 0 1.5mm;
+    padding-bottom:1.2mm;
+    border-bottom:1px solid var(--line);
+    color:var(--navy);
+    font-size:10.5pt;
+    font-weight:700;
+    line-height:1.35;
+  }
+  .section h2::after{
+    content:"";
+    position:absolute;
+    inset-inline-start:0;
+    bottom:-1px;
+    width:16mm;
+    height:2px;
+    background:var(--gold);
+  }
+  .section h2 small{
+    color:var(--muted);
+    font-size:8pt;
+    font-weight:500;
+    letter-spacing:.2px;
+  }
+
+  p.summary{ margin:0; text-align:justify; color:#2C3945; }
+
+  .hint{
+    margin:0 0 2mm;
+    padding:1.5mm 2mm;
+    background:var(--wash);
+    border-inline-start:2px solid var(--gold);
+    color:var(--muted);
+    font-size:8pt;
+  }
+
+  .entry{ margin-bottom:2mm; break-inside:avoid; }
+  .entry:last-child{ margin-bottom:0; }
+  .entry-head{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:1mm 5mm;
+  }
+  .entry-title{ font-weight:700; color:var(--navy); font-size:10pt; }
+  .entry-company{ color:var(--muted); font-size:9pt; }
+  .entry-date{
+    color:var(--muted);
+    font-size:8.5pt;
+    font-family:"Segoe UI",Arial,sans-serif;
+    white-space:nowrap;
+  }
+  .entry-label{ color:var(--gold); font-weight:700; font-size:8pt; margin-top:1mm; }
+
+  ul.bullets{ list-style:none; margin:.8mm 0 0; padding:0; }
+  ul.bullets li{ position:relative; padding-inline-start:4mm; margin-bottom:.4mm; }
+  ul.bullets li::before{
+    content:"";
+    position:absolute;
+    inset-inline-start:.6mm;
+    top:2mm;
+    width:1.5mm;
+    height:1.5mm;
+    background:var(--gold);
+    border-radius:50%;
+  }
+  ul.skills{ list-style:none; margin:0; padding:0; font-size:8.8pt; line-height:1.75; }
+  ul.skills li{ display:inline; }
+  ul.skills li::after{
+    content:"•";
+    color:var(--gold);
+    font-weight:700;
+    padding-inline:1.5mm;
+  }
+  ul.skills li:last-child::after{ content:""; }
+
+  .lang-row{ display:flex; align-items:baseline; gap:3mm; margin-bottom:.6mm; }
+  .lang-row .dots{ flex:1; border-bottom:1px dotted #B9C2CC; transform:translateY(-1mm); }
+  .lang-row .lang-name{ font-weight:600; min-width:28mm; }
+  .lang-row .lang-level{ color:var(--muted); min-width:30mm; }
+
+  .page--en,
+  .page--en .name,
+  .page--en .section h2,
+  .page--en .entry-title{ font-family:"Segoe UI",Arial,Helvetica,sans-serif; }
+  .page--en .name{ letter-spacing:1.5px; }
+  .page--en .kicker{ letter-spacing:2px; }
+  .page--en p.summary{ text-align:left; }
+
+  /* ---------- Editing affordances ---------- */
+  [contenteditable="true"]{ border-radius:3px; transition:background .15s,box-shadow .15s; }
+  [contenteditable="true"]:hover{ background:rgba(180,145,62,.07); }
+  [contenteditable="true"]:focus{ outline:none; background:#FFF8E7; box-shadow:0 0 0 1px var(--gold); }
+  [contenteditable="true"].is-empty::before{
+    content:attr(data-placeholder);
+    color:#9AA3AD;
+    font-style:italic;
+    opacity:.9;
+  }
+  .masthead [contenteditable="true"].is-empty::before{ color:#C9D4DF; }
+
+  /* ---------- Print / PDF ---------- */
+  @page{ size:A4; margin:0; }
+  @media print{
+    html,body{ background:#fff; }
+    .toolbar,.hint{ display:none !important; }
+    .page{ width:auto; min-height:297mm; margin:0; box-shadow:none; }
+    [contenteditable="true"]:hover,
+    [contenteditable="true"]:focus{ background:transparent; box-shadow:none; }
+    .section,.entry,ul.skills,ul.bullets li{ break-inside:avoid; }
+  }
+  @media screen and (max-width:900px){
+    .page{ width:100%; margin:12px; }
+    .body,.masthead{ padding-inline:7mm; }
+    ul.skills{ font-size:8.3pt; }
+  }
+</style>
+</head>
+<body data-view="both">
+
+<!-- ================= TOOLBAR ================= -->
+<div class="toolbar" role="toolbar" aria-label="أدوات السيرة الذاتية">
+  <div class="brand">سيرة خالد عبدالله <span>| Khalid Abdullah — CV</span></div>
+  <button type="button" id="viewBoth" aria-pressed="true">العربية + الإنجليزية</button>
+  <button type="button" id="viewAr" aria-pressed="false">العربية</button>
+  <button type="button" id="viewEn" aria-pressed="false">English</button>
+  <button type="button" id="resetBtn" title="إعادة البيانات الأصلية">إعادة تعيين</button>
+  <span class="status" id="saveStatus">بيانات تجريبية — قابلة للتعديل</span>
+  <button type="button" class="primary" id="printBtn">تصدير PDF / طباعة</button>
+</div>
+
+<!-- ================= ARABIC PAGE ================= -->
+<article class="page page--ar last-visible" lang="ar" dir="rtl">
+  <header class="masthead">
+    <div class="kicker">سيرة ذاتية مهنية · Professional CV</div>
+    <h1 class="name" contenteditable="true" data-field="ar_name">خالد عبدالله</h1>
+    <div class="name-alt" contenteditable="true" data-field="ar_name_alt">Khalid Abdullah</div>
+    <div class="role" contenteditable="true" data-field="ar_role">متخصص إدارة أعمال وتسويق</div>
+    <div class="role-en" contenteditable="true" data-field="ar_role_en">Business Administration &amp; Marketing Specialist</div>
+
+    <div class="contact">
+      <span class="contact-item"><span class="contact-label">الهاتف:</span><span class="contact-value" contenteditable="true" data-field="ar_phone">+966 50 123 4567</span></span>
+      <span class="contact-item"><span class="contact-label">البريد:</span><span class="contact-value" contenteditable="true" data-field="ar_email">khalid.abdullah@example.com</span></span>
+      <span class="contact-item"><span class="contact-label">لينكدإن:</span><span class="contact-value" contenteditable="true" data-field="ar_web">linkedin.com/in/khalid-abdullah-example</span></span>
+      <span class="contact-item"><span class="contact-label">المدينة:</span><span class="contact-value" contenteditable="true" data-field="ar_location">الرياض، المملكة العربية السعودية</span></span>
+    </div>
+  </header>
+
+  <div class="body">
+    <section class="section">
+      <h2>النبذة المهنية <small>Professional Summary</small></h2>
+      <p class="summary" contenteditable="true" data-field="ar_summary">متخصص إدارة أعمال وتسويق بخبرة تتجاوز خمس سنوات في التخطيط التسويقي، وتطوير الأعمال، وتحليل السوق، وإدارة علاقات العملاء. خبرة في تنسيق فرق متعددة الوظائف وتحويل بيانات الأداء إلى رؤى عملية تدعم نمو المبيعات وتحسين تجربة العميل. أتقن أدوات التسويق الرقمي والتحليل، وأسعى للمساهمة في بيئة مؤسسية تركز على التخطيط الاستراتيجي والنتائج القابلة للقياس.</p>
+    </section>
+
+    <section class="section">
+      <h2>الخبرات العملية <small>Work Experience</small></h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title" contenteditable="true" data-field="ar_exp1_title">أخصائي أول لتطوير الأعمال والتسويق</span>
+          <span class="entry-date" contenteditable="true" data-field="ar_exp1_date">يناير 2022 – حتى الآن</span>
+        </div>
+        <div class="entry-company" contenteditable="true" data-field="ar_exp1_company">شركة أفق الرؤية للتجارة — الرياض</div>
+        <div class="entry-label">المسؤوليات والإنجازات</div>
+        <ul class="bullets">
+          <li contenteditable="true" data-field="ar_exp1_b1">قيادة إعداد الخطة التسويقية السنوية ومتابعة مؤشرات الأداء لثلاثة خطوط إنتاج.</li>
+          <li contenteditable="true" data-field="ar_exp1_b2">تنسيق فرق المبيعات والعمليات والمالية لضمان تنفيذ الحملات في مواعيدها وضمن الميزانية.</li>
+          <li contenteditable="true" data-field="ar_exp1_b3">تحسين مسار تتبع العملاء المحتملين عبر نظام CRM، مما أسهم في رفع عدد العملاء المؤهلين بنسبة 18% خلال عام واحد.</li>
+          <li contenteditable="true" data-field="ar_exp1_b4">تحليل بيانات السوق والمنافسين لتحديد فرص النمو وتقديم توصيات التموضع والتسعير للإدارة.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title" contenteditable="true" data-field="ar_exp2_title">أخصائي تسويق وإدارة أعمال</span>
+          <span class="entry-date" contenteditable="true" data-field="ar_exp2_date">يونيو 2019 – ديسمبر 2021</span>
+        </div>
+        <div class="entry-company" contenteditable="true" data-field="ar_exp2_company">شركة المدى للحلول التجارية — جدة</div>
+        <div class="entry-label">المسؤوليات والإنجازات</div>
+        <ul class="bullets">
+          <li contenteditable="true" data-field="ar_exp2_b1">دعم التخطيط والتنسيق الإداري اليومي ومتابعة مراسلات العملاء والموردين.</li>
+          <li contenteditable="true" data-field="ar_exp2_b2">تنفيذ حملات التسويق الرقمي عبر وسائل التواصل والبريد الإلكتروني والصفحات المقصودة.</li>
+          <li contenteditable="true" data-field="ar_exp2_b3">إدارة قاعدة بيانات العملاء وإعداد تقارير دورية عن مستويات النشاط والتفاعل.</li>
+          <li contenteditable="true" data-field="ar_exp2_b4">المشاركة في تنظيم الفعاليات المؤسسية واجتماعات الشركاء.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>المؤهلات التعليمية <small>Education</small></h2>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title" contenteditable="true" data-field="ar_edu1_degree">بكالوريوس إدارة الأعمال، تخصص تسويق</span>
+          <span class="entry-date" contenteditable="true" data-field="ar_edu1_year">2019</span>
+        </div>
+        <div class="entry-company" contenteditable="true" data-field="ar_edu1_school">جامعة الرياض للأعمال والتقنية</div>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title" contenteditable="true" data-field="ar_edu2_degree">دبلوم التسويق الرقمي</span>
+          <span class="entry-date" contenteditable="true" data-field="ar_edu2_year">2021</span>
+        </div>
+        <div class="entry-company" contenteditable="true" data-field="ar_edu2_school">المعهد العربي للتطوير المهني</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>المهارات المهنية <small>Professional Skills</small></h2>
+      <ul class="skills">
+        <li contenteditable="true" data-field="ar_sk1">إدارة الأعمال والتخطيط</li>
+        <li contenteditable="true" data-field="ar_sk2">التسويق الرقمي (Digital Marketing)</li>
+        <li contenteditable="true" data-field="ar_sk3">إدارة المشاريع (Project Management)</li>
+        <li contenteditable="true" data-field="ar_sk4">تحليل السوق (Market Analysis)</li>
+        <li contenteditable="true" data-field="ar_sk5">تطوير الأعمال (Business Development)</li>
+        <li contenteditable="true" data-field="ar_sk6">إدارة علاقات العملاء (CRM)</li>
+        <li contenteditable="true" data-field="ar_sk7">مهارات التواصل والتفاوض</li>
+        <li contenteditable="true" data-field="ar_sk8">العمل الجماعي وحل المشكلات</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>المهارات التقنية <small>Technical Skills</small></h2>
+      <ul class="skills">
+        <li contenteditable="true" data-field="ar_t1">Microsoft Office</li>
+        <li contenteditable="true" data-field="ar_t2">Excel وPowerPoint</li>
+        <li contenteditable="true" data-field="ar_t3">أدوات التسويق الرقمي (Google Ads، Meta Business Suite)</li>
+        <li contenteditable="true" data-field="ar_t4">أدوات تحليل البيانات (Google Analytics، Power BI)</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>اللغات <small>Languages</small></h2>
+      <div class="lang-row">
+        <span class="lang-name" contenteditable="true" data-field="ar_lang1">العربية</span>
+        <span class="dots"></span>
+        <span class="lang-level" contenteditable="true" data-field="ar_lang1_level">لغة أم</span>
+      </div>
+      <div class="lang-row">
+        <span class="lang-name" contenteditable="true" data-field="ar_lang2">الإنجليزية</span>
+        <span class="dots"></span>
+        <span class="lang-level" contenteditable="true" data-field="ar_lang2_level">مستوى مهني متوسط (Professional Working)</span>
+      </div>
+    </section>
+  </div>
+</article>
+
+<!-- ================= ENGLISH PAGE ================= -->
+<article class="page page--en" lang="en" dir="ltr">
+  <header class="masthead">
+    <div class="kicker">Professional CV · سيرة ذاتية</div>
+    <h1 class="name" contenteditable="true" data-field="en_name">KHALID ABDULLAH</h1>
+    <div class="role" contenteditable="true" data-field="en_role">Business Administration &amp; Marketing Specialist</div>
+
+    <div class="contact">
+      <span class="contact-item"><span class="contact-label">Phone:</span><span class="contact-value" contenteditable="true" data-field="en_phone">+966 50 123 4567</span></span>
+      <span class="contact-item"><span class="contact-label">Email:</span><span class="contact-value" contenteditable="true" data-field="en_email">khalid.abdullah@example.com</span></span>
+      <span class="contact-item"><span class="contact-label">LinkedIn:</span><span class="contact-value" contenteditable="true" data-field="en_web">linkedin.com/in/khalid-abdullah-example</span></span>
+      <span class="contact-item"><span class="contact-label">Location:</span><span class="contact-value" contenteditable="true" data-field="en_location">Riyadh, Saudi Arabia</span></span>
+    </div>
+  </header>
+
+  <div class="body">
+    <section class="section">
+      <h2>Professional Summary</h2>
+      <p class="summary" contenteditable="true" data-field="en_summary">Business Administration &amp; Marketing specialist with over five years of experience in marketing planning, business development, market analysis, and customer relationship management. Skilled at coordinating cross-functional teams and translating performance data into practical insights that support sales growth and a better customer experience. Proficient in digital marketing and analytics tools, seeking to contribute to an organization focused on strategic planning and measurable results.</p>
+    </section>
+
+    <section class="section">
+      <h2>Work Experience</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title" contenteditable="true" data-field="en_exp1_title">Senior Business Development &amp; Marketing Specialist</span>
+          <span class="entry-date" contenteditable="true" data-field="en_exp1_date">Jan 2022 – Present</span>
+        </div>
+        <div class="entry-company" contenteditable="true" data-field="en_exp1_company">Vista Horizon Trading Co. — Riyadh</div>
+        <div class="entry-label">Responsibilities &amp; Achievements</div>
+        <ul class="bullets">
+          <li contenteditable="true" data-field="en_exp1_b1">Led preparation of the annual marketing plan and tracked KPIs across three product lines.</li>
+          <li contenteditable="true" data-field="en_exp1_b2">Coordinated sales, operations, and finance teams to deliver campaigns on schedule and within budget.</li>
+          <li contenteditable="true" data-field="en_exp1_b3">Improved lead-tracking workflows in CRM, contributing to an 18% increase in qualified leads within one year.</li>
+          <li contenteditable="true" data-field="en_exp1_b4">Analyzed market and competitor data to identify growth opportunities and inform positioning and pricing recommendations.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title" contenteditable="true" data-field="en_exp2_title">Marketing &amp; Business Administration Specialist</span>
+          <span class="entry-date" contenteditable="true" data-field="en_exp2_date">Jun 2019 – Dec 2021</span>
+        </div>
+        <div class="entry-company" contenteditable="true" data-field="en_exp2_company">Al-Madaa Business Solutions — Jeddah</div>
+        <div class="entry-label">Responsibilities &amp; Achievements</div>
+        <ul class="bullets">
+          <li contenteditable="true" data-field="en_exp2_b1">Supported daily administrative coordination and client and supplier communications.</li>
+          <li contenteditable="true" data-field="en_exp2_b2">Executed digital campaigns across social media, email, and landing pages.</li>
+          <li contenteditable="true" data-field="en_exp2_b3">Maintained the customer database and produced periodic activity and engagement reports.</li>
+          <li contenteditable="true" data-field="en_exp2_b4">Assisted in organizing corporate events and partner meetings.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Education</h2>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title" contenteditable="true" data-field="en_edu1_degree">Bachelor of Business Administration, Marketing</span>
+          <span class="entry-date" contenteditable="true" data-field="en_edu1_year">2019</span>
+        </div>
+        <div class="entry-company" contenteditable="true" data-field="en_edu1_school">Riyadh University of Business &amp; Technology</div>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title" contenteditable="true" data-field="en_edu2_degree">Diploma in Digital Marketing</span>
+          <span class="entry-date" contenteditable="true" data-field="en_edu2_year">2021</span>
+        </div>
+        <div class="entry-company" contenteditable="true" data-field="en_edu2_school">Arabian Institute for Professional Development</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Professional Skills</h2>
+      <ul class="skills">
+        <li contenteditable="true" data-field="en_sk1">Business Administration &amp; Planning</li>
+        <li contenteditable="true" data-field="en_sk2">Digital Marketing</li>
+        <li contenteditable="true" data-field="en_sk3">Project Management</li>
+        <li contenteditable="true" data-field="en_sk4">Market Analysis</li>
+        <li contenteditable="true" data-field="en_sk5">Business Development</li>
+        <li contenteditable="true" data-field="en_sk6">Customer Relationship Management (CRM)</li>
+        <li contenteditable="true" data-field="en_sk7">Communication &amp; Negotiation</li>
+        <li contenteditable="true" data-field="en_sk8">Teamwork &amp; Problem Solving</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Technical Skills</h2>
+      <ul class="skills">
+        <li contenteditable="true" data-field="en_t1">Microsoft Office</li>
+        <li contenteditable="true" data-field="en_t2">Excel &amp; PowerPoint</li>
+        <li contenteditable="true" data-field="en_t3">Digital Marketing Tools (Google Ads, Meta Business Suite)</li>
+        <li contenteditable="true" data-field="en_t4">Data Analysis Tools (Google Analytics, Power BI)</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Languages</h2>
+      <div class="lang-row">
+        <span class="lang-name" contenteditable="true" data-field="en_lang1">Arabic</span>
+        <span class="dots"></span>
+        <span class="lang-level" contenteditable="true" data-field="en_lang1_level">Native</span>
+      </div>
+      <div class="lang-row">
+        <span class="lang-name" contenteditable="true" data-field="en_lang2">English</span>
+        <span class="dots"></span>
+        <span class="lang-level" contenteditable="true" data-field="en_lang2_level">Professional Working Proficiency</span>
+      </div>
+    </section>
+  </div>
+</article>
+
+<script>
+(function(){
+  "use strict";
+  var KEY = "khalid_abdullah_cv_v2";
+  var fields = Array.prototype.slice.call(document.querySelectorAll('[contenteditable="true"][data-field]'));
+  var status = document.getElementById("saveStatus");
+
+  function isBlank(el){ return !el.textContent.replace(/\u00a0/g," ").trim(); }
+  function refreshPlaceholder(el){ el.classList.toggle("is-empty", isBlank(el)); }
+
+  function save(){
+    var data = {};
+    fields.forEach(function(f){ data[f.dataset.field] = f.innerHTML; });
+    try{
+      localStorage.setItem(KEY, JSON.stringify(data));
+      status.textContent = "تم الحفظ تلقائياً ✓";
+    }catch(e){
+      status.textContent = "التعديل متاح — احفظ عبر الطباعة";
+    }
+  }
+
+  function load(){
+    try{
+      var raw = localStorage.getItem(KEY);
+      if(!raw) return;
+      var data = JSON.parse(raw);
+      fields.forEach(function(f){
+        if(Object.prototype.hasOwnProperty.call(data, f.dataset.field)){
+          f.innerHTML = data[f.dataset.field];
+        }
+      });
+    }catch(e){}
+  }
+
+  fields.forEach(function(f){
+    refreshPlaceholder(f);
+    f.addEventListener("input", function(){ refreshPlaceholder(f); save(); });
+    f.addEventListener("blur", function(){ refreshPlaceholder(f); });
+  });
+
+  load();
+  fields.forEach(refreshPlaceholder);
+
+  function setView(view){
+    document.body.setAttribute("data-view", view);
+    var buttons = {
+      both: document.getElementById("viewBoth"),
+      ar: document.getElementById("viewAr"),
+      en: document.getElementById("viewEn")
+    };
+    Object.keys(buttons).forEach(function(k){
+      buttons[k].setAttribute("aria-pressed", String(k === view));
+    });
+    var pages = Array.prototype.slice.call(document.querySelectorAll(".page"));
+    pages.forEach(function(p){ p.classList.remove("last-visible"); });
+    var visible = pages.filter(function(p){ return window.getComputedStyle(p).display !== "none"; });
+    if(visible.length){ visible[visible.length - 1].classList.add("last-visible"); }
+  }
+
+  document.getElementById("viewBoth").addEventListener("click", function(){ setView("both"); });
+  document.getElementById("viewAr").addEventListener("click", function(){ setView("ar"); });
+  document.getElementById("viewEn").addEventListener("click", function(){ setView("en"); });
+  document.getElementById("printBtn").addEventListener("click", function(){ window.print(); });
+  document.getElementById("resetBtn").addEventListener("click", function(){
+    if(window.confirm("إعادة تعيين جميع الحقول إلى البيانات التجريبية الأصلية؟")){
+      try{ localStorage.removeItem(KEY); }catch(e){}
+      window.location.reload();
+    }
+  });
+
+  setView("both");
+})();
+</script>
+</body>
+</html>
